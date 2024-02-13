@@ -1,4 +1,4 @@
-import { TicketStrategy } from "./TicketStrategy";
+import { TicketStrategy } from "./index";
 
 export class PairTicketStrategy implements TicketStrategy {
   getPrice = () => 5000;

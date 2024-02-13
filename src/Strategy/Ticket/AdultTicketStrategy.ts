@@ -1,4 +1,4 @@
-import { TicketStrategy } from "./TicketStrategy";
+import { TicketStrategy } from "./index";
 
 export class AdultTicketStrategy implements TicketStrategy {
   getPrice = () => 3000;

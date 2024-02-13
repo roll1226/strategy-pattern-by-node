@@ -8,4 +8,4 @@ const TicketStrategies = [
   new Ticket(new ChildTicketStrategy()),
   new Ticket(new PairTicketStrategy()),
 ];
-console.log(TicketStrategies[0].getPrice());
+console.log(TicketStrategies[1].getPrice());

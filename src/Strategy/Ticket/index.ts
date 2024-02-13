@@ -1,4 +1,8 @@
-import { TicketStrategy } from "./TicketStrategy";
+export interface TicketStrategy {
+  getPrice(): number;
+  getUserCount(): number;
+  isAvailableChildAttraction(): boolean;
+}
 
 export class Ticket {
   private _strategy: TicketStrategy;
