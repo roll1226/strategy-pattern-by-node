@@ -1,7 +1,7 @@
 build:
 	npm run build
 script:
-	npm run script
+	npm run script ${index}
 run:
 	@make build
-	@make script
+	@make script index=${index}
