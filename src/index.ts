@@ -10,4 +10,9 @@ const TicketStrategies = [
 ];
 
 const TicketIndex = Number(process.argv[2]);
-console.log(TicketStrategies[TicketIndex].getPrice());
+const TicketStrategy = TicketStrategies[TicketIndex];
+console.log(`getPrice: ${TicketStrategy.getPrice()}`);
+console.log(`getUserCount: ${TicketStrategy.getUserCount()}`);
+console.log(
+  `isAvailableChildAttraction: ${TicketStrategy.isAvailableChildAttraction()}`
+);
