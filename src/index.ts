@@ -1,11 +1,13 @@
-import { Ticket } from "./Strategy/Ticket/index";
-import { AdultTicketStrategy } from "./Strategy/Ticket/AdultTicketStrategy";
-import { ChildTicketStrategy } from "./Strategy/Ticket/ChildTicketStrategy";
-import { PairTicketStrategy } from "./Strategy/Ticket/PairTicketStrategy";
+import { Ticket } from "./Strategies/Ticket/index";
+import { AdultTicketStrategy } from "./Strategies/Ticket/AdultTicketStrategy";
+import { ChildTicketStrategy } from "./Strategies/Ticket/ChildTicketStrategy";
+import { PairTicketStrategy } from "./Strategies/Ticket/PairTicketStrategy";
 
 const TicketStrategies = [
   new Ticket(new AdultTicketStrategy()),
   new Ticket(new ChildTicketStrategy()),
   new Ticket(new PairTicketStrategy()),
 ];
-console.log(TicketStrategies[1].getPrice());
+
+const TicketIndex = Number(process.argv[2]);
+console.log(TicketStrategies[TicketIndex].getPrice());
