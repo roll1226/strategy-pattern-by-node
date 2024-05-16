@@ -1,7 +1,7 @@
+import { Ticket } from "./Strategies/Ticket";
 import { AdultTicketStrategy } from "./Strategies/Ticket/AdultTicketStrategy";
 import { ChildTicketStrategy } from "./Strategies/Ticket/ChildTicketStrategy";
 import { PairTicketStrategy } from "./Strategies/Ticket/PairTicketStrategy";
-import { Ticket } from "./Strategies/Ticket/index";
 
 const TicketStrategies = [
   new Ticket(new AdultTicketStrategy()),
@@ -13,6 +13,4 @@ const TicketIndex = Number(process.argv[2]);
 const TicketStrategy = TicketStrategies[TicketIndex];
 console.log(`getPrice: ${TicketStrategy.getPrice()}`);
 console.log(`getUserCount: ${TicketStrategy.getUserCount()}`);
-console.log(
-  `isAvailableChildAttraction: ${TicketStrategy.isAvailableChildAttraction()}`
-);
+console.log(`needChildChair: ${TicketStrategy.needChildChair()}`);

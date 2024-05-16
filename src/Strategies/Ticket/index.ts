@@ -1,7 +1,7 @@
 import { TicketStrategyInterface } from "./TicketStrategyInterface";
 
 /**
- * @export getPrice
+ * @export
  * @class Ticket
  */
 export class Ticket {
@@ -34,6 +34,5 @@ export class Ticket {
    * @returns boolean
    * @memberof Ticket
    */
-  isAvailableChildAttraction = (): boolean =>
-    this._strategy.isAvailableChildAttraction();
+  needChildChair = (): boolean => this._strategy.needChildChair();
 }
