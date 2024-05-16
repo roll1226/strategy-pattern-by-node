@@ -1,6 +1,6 @@
-import { TicketStrategy } from "./index";
+import { TicketStrategyInterface } from "./TicketStrategyInterface";
 
-export class AdultTicketStrategy implements TicketStrategy {
+export class AdultTicketStrategy implements TicketStrategyInterface {
   getPrice = () => 3000;
   getUserCount = () => 1;
   isAvailableChildAttraction = () => false;

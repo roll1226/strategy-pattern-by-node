@@ -1,8 +1,4 @@
-export interface TicketStrategy {
-  getPrice(): number;
-  getUserCount(): number;
-  isAvailableChildAttraction(): boolean;
-}
+import { TicketStrategyInterface } from "./TicketStrategyInterface";
 
 /**
  * @export getPrice
@@ -11,16 +7,16 @@ export interface TicketStrategy {
 export class Ticket {
   /**
    * @private
-   * @type {TicketStrategy}
+   * @type {TicketStrategyInterface}
    * @memberof Ticket
    */
-  private _strategy: TicketStrategy;
+  private _strategy: TicketStrategyInterface;
   /**
    * Creates an instance of Ticket.
-   * @param {TicketStrategy} strategy
+   * @param {TicketStrategyInterface} strategy
    * @memberof Ticket
    */
-  constructor(strategy: TicketStrategy) {
+  constructor(strategy: TicketStrategyInterface) {
     this._strategy = strategy;
   }
 

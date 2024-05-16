@@ -1,7 +1,7 @@
-import { Ticket } from "./Strategies/Ticket/index";
 import { AdultTicketStrategy } from "./Strategies/Ticket/AdultTicketStrategy";
 import { ChildTicketStrategy } from "./Strategies/Ticket/ChildTicketStrategy";
 import { PairTicketStrategy } from "./Strategies/Ticket/PairTicketStrategy";
+import { Ticket } from "./Strategies/Ticket/index";
 
 const TicketStrategies = [
   new Ticket(new AdultTicketStrategy()),

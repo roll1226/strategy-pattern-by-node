@@ -1,5 +1,6 @@
-import { TicketStrategy } from "./index";
-export class ChildTicketStrategy implements TicketStrategy {
+import { TicketStrategyInterface } from "./TicketStrategyInterface";
+
+export class ChildTicketStrategy implements TicketStrategyInterface {
   getPrice = () => 1000;
   getUserCount = () => 1;
   isAvailableChildAttraction = () => true;
