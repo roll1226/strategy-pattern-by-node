@@ -15,12 +15,12 @@ app.get("/users", async (req, res) => {
 app.get("/user/create", (req, res) => {
   res.send(`
     <form action="/user/create" method="post">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name"><br>
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email"><br><br>
-        <button type="submit">Submit</button>
-      </form>
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name"><br>
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email"><br><br>
+      <button type="submit">Submit</button>
+    </form>
   `);
 });
 
