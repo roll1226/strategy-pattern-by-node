@@ -12,7 +12,7 @@ app.get("/users", async (req, res) => {
   res.json(users);
 });
 
-app.get("/user/create", (req, res) => {
+app.get("/users/create", (req, res) => {
   res.send(`
     <form action="/user/create" method="post">
       <label for="name">Name:</label><br>
@@ -24,11 +24,22 @@ app.get("/user/create", (req, res) => {
   `);
 });
 
-app.post("/user/create", async (req, res) => {
+app.post("/users/create", async (req, res) => {
   console.log(req.body);
   const { name, email } = req.body;
   const user = await prisma.user.create({
     data: { name, email },
+  });
+  res.json(user);
+});
+
+app.get("/users/:id", async (req, res) => {
+  const id = Number(req.params.id);
+
+  const user = await prisma.user.findUnique({
+    where: {
+      id,
+    },
   });
   res.json(user);
 });
