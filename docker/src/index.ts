@@ -1,8 +1,6 @@
-import { PrismaClient } from "@prisma/client";
 import express from "express";
 import userRouter from "./routes/users";
 
-const prisma = new PrismaClient();
 const app = express();
 
 app.use(express.json());
