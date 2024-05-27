@@ -4,4 +4,5 @@ export const TICKET_TYPE = {
   PAIR: 2,
 } as const;
 
-export type TicketType = (typeof TICKET_TYPE)[keyof typeof TICKET_TYPE];
+export type TICKET_TYPE_KEY = keyof typeof TICKET_TYPE;
+export type TICKET_TYPE = (typeof TICKET_TYPE)[TICKET_TYPE_KEY];
