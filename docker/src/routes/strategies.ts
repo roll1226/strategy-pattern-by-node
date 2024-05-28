@@ -1,4 +1,3 @@
-import { TICKET_TYPE_KEY } from './../enums/Ticket/index';
 import { Request, Response, Router } from "express";
 import { Ticket } from "../Strategies/Ticket";
 import { AdultTicketStrategy } from "../Strategies/Ticket/AdultTicketStrategy";
@@ -21,7 +20,14 @@ router.get("/", async (req: Request, res: Response) => {
 router.get("/:id", (req, res) => {
   const id = Number(req.params.id) as TICKET_TYPE;
   const ticket = TicketStrategies[id];
-  res.json(ticket);
+  const result = {
+    price: ticket.getPrice(),
+    userCount: ticket.getUserCount(),
+    needChildChair: ticket.needChildChair(),
+  };
+  console.log(result);
+
+  res.json(result);
 });
 
 export default router;
