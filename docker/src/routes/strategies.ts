@@ -1,8 +1,10 @@
 import { Request, Response, Router } from "express";
-import { Ticket } from "../Strategies/Ticket";
-import { AdultTicketStrategy } from "../Strategies/Ticket/AdultTicketStrategy";
-import { ChildTicketStrategy } from "../Strategies/Ticket/ChildTicketStrategy";
-import { PairTicketStrategy } from "../Strategies/Ticket/PairTicketStrategy";
+import {
+  AdultTicketStrategy,
+  ChildTicketStrategy,
+  PairTicketStrategy,
+  Ticket,
+} from "../Strategies/Ticket";
 import { TICKET_TYPE } from "../enums/Ticket";
 
 const router = Router();

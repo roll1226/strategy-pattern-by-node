@@ -1,5 +1,9 @@
 import { TicketStrategyInterface } from "./TicketStrategyInterface";
 
+export * from "./AdultTicketStrategy";
+export * from "./ChildTicketStrategy";
+export * from "./PairTicketStrategy";
+
 /**
  * @export
  * @class Ticket
