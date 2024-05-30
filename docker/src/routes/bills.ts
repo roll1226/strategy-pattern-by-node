@@ -62,6 +62,10 @@ router.get("/old", (req, res) => {
 
 router.get("/:id", (req, res) => {
   const id = Number(req.params.id) as BILL_TYPE;
+
+  if (!Object.values(BILL_TYPE).includes(id))
+    return res.status(400).send("Invalid BILL_TYPE id");
+
   const bill = BillStrategies[id];
 
   const dom = renderBillDom([bill]);
