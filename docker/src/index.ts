@@ -1,6 +1,6 @@
+import strategyRouter from "@/routes/strategies";
+import userRouter from "@/routes/users";
 import express from "express";
-import strategyRouter from "./routes/strategies";
-import userRouter from "./routes/users";
 
 const app = express();
 

@@ -1,11 +1,11 @@
-import { Request, Response, Router } from "express";
 import {
   AdultTicketStrategy,
   ChildTicketStrategy,
   PairTicketStrategy,
   Ticket,
-} from "../Strategies/Ticket";
-import { TICKET_TYPE } from "../enums/Ticket";
+} from "@/Strategies/Ticket";
+import { TICKET_TYPE } from "@/enums/Ticket";
+import { Request, Response, Router } from "express";
 
 const router = Router();
 
