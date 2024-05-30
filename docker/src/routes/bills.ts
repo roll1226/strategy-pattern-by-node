@@ -27,13 +27,15 @@ const renderBillDom: RenderBillDomType<Bill> = (bills) => {
   return bills
     .map((bill) => {
       return `
-        <h1>${bill.getName()}</h1>
-        <h2>${bill.getBehind()}</h2>
-        <p>${bill.getPrice().toLocaleString()}円</p>
-        <p>${bill.isNew() ? "新" : "旧"}お札</p>
+        <div>
+          <h1>${bill.getName()}</h1>
+          <h2>${bill.getBehind()}</h2>
+          <p>${bill.getPrice().toLocaleString()}円</p>
+          <p>${bill.isNew() ? "新" : "旧"}お札</p>
+        </div>
       `;
     })
-    .join();
+    .join("----------------------------");
 };
 
 router.get("/", (req, res) => {
