@@ -1,0 +1,10 @@
+export const BILL_TYPE = {
+  OLD_TEN_THOUSAND_YEN: 0,
+  OLD_FIVE_THOUSAND_YEN: 1,
+  OLD_THOUSAND_YEN: 2,
+  NEW_TEN_THOUSAND_YEN: 3,
+  NEW_FIVE_THOUSAND_YEN: 4,
+  NEW_THOUSAND_YEN: 5,
+} as const;
+
+export type BILL_TYPE = (typeof BILL_TYPE)[keyof typeof BILL_TYPE];
