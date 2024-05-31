@@ -39,7 +39,7 @@ const renderBillDom: RenderBillDomType<Bill> = (bills) => {
 };
 
 router.get("/", (req, res) => {
-  res.json("Show bills Page");
+  res.send("Hello bills");
 });
 
 router.get("/new", (req, res) => {
