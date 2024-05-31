@@ -28,10 +28,10 @@ const renderBillDom: RenderBillDomType<Bill> = (bills) => {
     .map((bill) => {
       return `
         <div>
-          <h1>${bill.getName()}</h1>
-          <h2>${bill.getBehind()}</h2>
-          <p>${bill.getPrice().toLocaleString()}円</p>
-          <p>${bill.isNew() ? "新" : "旧"}お札</p>
+          <h1 style="margin: 0;">${bill.getName()}</h1>
+          <h2 style="margin: 0;">${bill.getBehind()}</h2>
+          <p style="margin: 0;">${bill.getPrice().toLocaleString()}円</p>
+          <p style="margin: 0;">${bill.isNew() ? "新" : "旧"}お札</p>
         </div>
       `;
     })
