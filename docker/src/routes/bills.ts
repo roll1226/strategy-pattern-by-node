@@ -10,20 +10,20 @@ import {
 import { BILL_TYPE } from "@/enums/Bill";
 import { Router } from "express";
 
-type RenderBillDomType<T> = (bills: [T, ...T[]]) => string;
+type CreateBillsDomType<T> = (bills: [T, ...T[]]) => string;
 
 const router = Router();
 
-const BillStrategies: Record<BILL_TYPE, Bill> = [
-  new Bill(new OldTenThousandYenStrategy()),
-  new Bill(new OldFiveThousandYenStrategy()),
-  new Bill(new OldThousandYenStrategy()),
-  new Bill(new NewTenThousandYenStrategy()),
-  new Bill(new NewFiveThousandYenStrategy()),
-  new Bill(new NewThousandYenStrategy()),
-];
+const BillStrategies: Record<BILL_TYPE, Bill> = {
+  [BILL_TYPE.OLD_TEN_THOUSAND_YEN]: new Bill(new OldTenThousandYenStrategy()),
+  [BILL_TYPE.OLD_FIVE_THOUSAND_YEN]: new Bill(new OldFiveThousandYenStrategy()),
+  [BILL_TYPE.OLD_THOUSAND_YEN]: new Bill(new OldThousandYenStrategy()),
+  [BILL_TYPE.NEW_TEN_THOUSAND_YEN]: new Bill(new NewTenThousandYenStrategy()),
+  [BILL_TYPE.NEW_FIVE_THOUSAND_YEN]: new Bill(new NewFiveThousandYenStrategy()),
+  [BILL_TYPE.NEW_THOUSAND_YEN]: new Bill(new NewThousandYenStrategy()),
+};
 
-const renderBillDom: RenderBillDomType<Bill> = (bills) => {
+const createBillsDom: CreateBillsDomType<Bill> = (bills) => {
   return bills
     .map((bill) => {
       return `
@@ -47,7 +47,7 @@ router.get("/new", (req, res) => {
   const fiveThousandYen = BillStrategies[BILL_TYPE.NEW_FIVE_THOUSAND_YEN];
   const thousandYen = BillStrategies[BILL_TYPE.NEW_THOUSAND_YEN];
 
-  const dom = renderBillDom([tenThousandYen, fiveThousandYen, thousandYen]);
+  const dom = createBillsDom([tenThousandYen, fiveThousandYen, thousandYen]);
   res.send(dom);
 });
 
@@ -56,7 +56,7 @@ router.get("/old", (req, res) => {
   const fiveThousandYen = BillStrategies[BILL_TYPE.OLD_FIVE_THOUSAND_YEN];
   const thousandYen = BillStrategies[BILL_TYPE.OLD_THOUSAND_YEN];
 
-  const dom = renderBillDom([tenThousandYen, fiveThousandYen, thousandYen]);
+  const dom = createBillsDom([tenThousandYen, fiveThousandYen, thousandYen]);
   res.send(dom);
 });
 
@@ -68,7 +68,7 @@ router.get("/:id", (req, res) => {
 
   const bill = BillStrategies[id];
 
-  const dom = renderBillDom([bill]);
+  const dom = createBillsDom([bill]);
   res.send(dom);
 });
 
