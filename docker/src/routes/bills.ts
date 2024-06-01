@@ -29,7 +29,7 @@ const createBillsDom: CreateBillsDomType<Bill> = (bills) => {
       return `
         <div>
           <h1 style="margin: 0;">${bill.getName()}</h1>
-          <h2 style="margin: 0;">${bill.getBehind()}</h2>
+          <h2 style="margin: 0;">裏面：${bill.getBehind()}</h2>
           <p style="margin: 0;">${bill.getPrice().toLocaleString()}円</p>
           <p style="margin: 0;">${bill.isNew() ? "新" : "旧"}お札</p>
         </div>
