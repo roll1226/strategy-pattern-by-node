@@ -35,4 +35,6 @@ export class Ticket {
    * @memberof Ticket
    */
   needChildChair = (): boolean => this._strategy.needChildChair();
+
+  getName = (): string => this._strategy.getName();
 }
